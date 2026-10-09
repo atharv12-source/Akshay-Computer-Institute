@@ -1,0 +1,100 @@
+.benefits-section {
+  padding: 80px 0;
+  background-color: #FFFFFF;
+}
+
+.benefits-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+}
+
+/* Center the last card if there are 7 cards in total */
+.benefits-grid > .benefit-card:last-child:nth-child(3n-2) {
+  grid-column: 2 / 3;
+}
+
+.benefit-card {
+  background-color: #FFFFFF;
+  border-left: 4px solid #FF8C00;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-icon {
+  font-size: 40px;
+  color: #FF8C00;
+  flex-shrink: 0;
+}
+
+.benefit-content {
+  flex-grow: 1;
+}
+
+.benefit-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  color: #1A1A2E;
+  margin: 0 0 10px 0;
+}
+
+.benefit-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: #4A4A4A;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .benefits-grid > .benefit-card:last-child:nth-child(3n-2),
+  .benefits-grid > .benefit-card:last-child:nth-child(even) {
+    grid-column: span 1; /* Reset the centering trick for 2 columns */
+  }
+  
+  /* Center the last card on 2 columns if odd number of cards */
+  .benefits-grid > .benefit-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: 50%;
+    margin: 0 auto;
+    width: calc(100% - 15px);
+  }
+}
+
+@media (max-width: 768px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .benefits-grid > .benefit-card:last-child:nth-child(odd) {
+    max-width: 100%;
+  }
+}

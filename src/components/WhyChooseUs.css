@@ -1,0 +1,100 @@
+.why-us-section {
+  padding: 80px 0;
+  background-color: #FFFFFF;
+}
+
+.why-us-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  color: #1A1A2E;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-family: 'Inter', sans-serif;
+  color: #4A4A4A;
+  font-size: 1.1rem;
+}
+
+.title-underline {
+  width: 80px;
+  height: 4px;
+  background-color: #FF8C00;
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+.why-us-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.why-us-card {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-top: 3px solid #1565C0;
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-top-color 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.why-us-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease, border-top-color 0.3s ease;
+}
+
+.why-us-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-top-color: #FF8C00;
+}
+
+.why-us-icon {
+  font-size: 48px;
+  color: #1565C0;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.why-us-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  color: #1A1A2E;
+  margin-bottom: 15px;
+}
+
+.why-us-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: #4A4A4A;
+  line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+  .why-us-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .why-us-grid {
+    grid-template-columns: 1fr;
+  }
+}
